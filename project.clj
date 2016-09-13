@@ -1,5 +1,5 @@
 (defproject try-hystrix "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
+  :description "A Ring app to test Hystrix integrations"
 
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [clj-time "0.11.0"] ; required due to bug in `lein-ring uberwar`
