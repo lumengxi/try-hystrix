@@ -1,6 +1,5 @@
 (ns try-hystrix.bootstrap
   (:require [clojure.tools.logging :as log]
-            [clj-http-hystrix.core :as hystrix-hook]
             [ring-jetty-hystrix-adapter.core :as jetty]
             [try-hystrix.handler :refer [app]]))
 
