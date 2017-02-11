@@ -6,7 +6,6 @@
                  [cheshire "5.6.3"]
                  [metosin/compojure-api "1.1.1"]
                  [clj-http "2.2.0"]
-                 [clj-http-hystrix "0.1.6"]
                  [org.clojure/tools.logging "0.3.1"]
                  [log4j/log4j "1.2.17"]
                  [org.slf4j/slf4j-log4j12 "1.7.21"]

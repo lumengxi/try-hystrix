@@ -8,7 +8,6 @@
   (cheshire/parse-string (slurp body) true))
 
 (deftest a-test
-
   (testing "Test GET request to /hello?name={a-name} returns expected response"
     (let [response (app (-> (mock/request :get  "/api/ping")))
           body     (parse-body (:body response))]

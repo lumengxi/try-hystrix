@@ -5,7 +5,6 @@
             [try-hystrix.handler :refer [app]]))
 
 (defn -main [& args]
-  (hystrix-hook/add-hook)
   (jetty/run-jetty-with-hystrix
     app
     {:port 3001
