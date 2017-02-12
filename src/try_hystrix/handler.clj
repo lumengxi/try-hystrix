@@ -4,7 +4,7 @@
             [ring.util.http-response :refer :all]
             [ring.middleware.json :as ring-json]
             [ring.middleware.logger :as ring-logger]
-            [try-hystrix.ping :as ping]))
+            [try-hystrix.api.ping :as ping]))
 
 (def app-routes
   (api
