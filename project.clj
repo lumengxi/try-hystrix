@@ -5,23 +5,17 @@
                  [clj-time "0.13.0"] ; required due to bug in `lein-ring uberwar`
                  [cheshire "5.7.0"]
                  [metosin/compojure-api "1.1.10"
-                  :exclusions [ring/ring-codec
-                               com.fasterxml.jackson.core/jackson-annotations
-                               com.fasterxml.jackson.core/jackson-databind]]
+                  :exclusions [ring/ring-core ring/ring-codec]]
                  [clj-http "2.2.0"]
 
-                 ; JSON Logging
-                 [io.clj/logging "0.8.1"]
-                 [ch.qos.logback/logback-core "1.2.1"]
-                 [ch.qos.logback/logback-classic "1.2.1"]
-                 [org.slf4j/log4j-over-slf4j "1.7.22"]
-                 [ch.qos.logback.contrib/logback-jackson "0.1.5"]
-                 [com.fasterxml.jackson.core/jackson-databind "2.8.6"]
-                 [ch.qos.logback.contrib/logback-json-classic "0.1.5"]
+                 ; Logging
+                 [org.clojure/tools.logging "0.3.1"]
+                 [log4j/log4j "1.2.17"]
+                 [org.slf4j/slf4j-log4j12 "1.7.21"]
 
                  [com.netflix.hystrix/hystrix-clj "1.5.9"]
                  [ring-jetty-hystrix-adapter "0.2.2" :exclusions [lamina]]
-                 [ring.middleware.logger "0.5.0" :exclusions [log4j]]
+                 [ring.middleware.logger "0.5.0"]
                  [ring/ring-json "0.4.0"]]
 
   :ring {:handler try-hystrix.handler/app}
