@@ -4,6 +4,7 @@
             [try-hystrix.handler :refer [app]]))
 
 (defn -main [& args]
+  (onelog.core/set-debug!)
   (jetty/run-jetty-with-hystrix
     app
     {:port 3001
