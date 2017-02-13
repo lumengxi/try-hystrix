@@ -19,7 +19,7 @@
 
 (defn async-run-hello-world
   [name]
-  (let [f (-> {:run-fn (hello-world name 5000)
+  (let [f (-> {:run-fn (hello-world name 10000)
                :command-key "hello-world-async"
                :group-key "api"}
               hystrix/command

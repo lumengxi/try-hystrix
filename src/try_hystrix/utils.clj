@@ -4,17 +4,17 @@
 
 (defn set-hystrix-config!
   [cmd-key k v]
-  (let [key (format "hystrix.command.%s.%s" (name cmd-key) k)]
+  (let [key (format "hystrix.command.%s.%s" cmd-key k)]
     (.setProperty (ConfigurationManager/getConfigInstance) key v)))
 
 (defn get-hystrix-key
   [cmd-key]
-  (HystrixCommandKey$Factory/asKey (name cmd-key)))
+  (HystrixCommandKey$Factory/asKey cmd-key))
 
 (defn get-metrics
-  [hystrix-cmd-key]
-  (HystrixCommandMetrics/getInstance hystrix-cmd-key))
+  [cmd-key]
+  (HystrixCommandMetrics/getInstance cmd-key))
 
 (defn get-circuit-breaker
-  [hystrix-cmd-key]
-  (HystrixCircuitBreaker$Factory/getInstance hystrix-cmd-key))
+  [cmd-key]
+  (HystrixCircuitBreaker$Factory/getInstance cmd-key))
